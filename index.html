@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TradePro – Futuristic Dashboard</title>
+<style>
+/* -------------------------------------------------
+   Global styles – dark, neon‑accented theme
+   ------------------------------------------------- */
+:root {
+    --bg-dark: #0b0c10;
+    --panel-bg: #1a1c23;
+    --text-primary: #c5c6c7;
+    --accent-neon: #66fcf1;
+    --accent-pink: #ff79c6;
+    --accent-purple: #bd93f9;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+html,body{
+    height:100%;
+    margin:0;
+    font-family: var(--font-mono);
+    background:#0b0c10;
+    color:var(--text-primary);
+}
+body{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+/* Header --------------------------------------------------- */
+header{
+    background:linear-gradient(90deg,var(--accent-neon),var(--accent-pink));
+    padding:0.8rem 1.5rem;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.6);
+}
+header h1{
+    margin:0;
+    font-size:1.8rem;
+    letter-spacing:2px;
+    color:#0b0c10;
+}
+
+/* Grid layout ------------------------------------------------ */
+main{
+    flex:1;
+    overflow:auto;
+    padding:1.5rem;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+}
+
+/* Category panels ------------------------------------------- */
+.panel{
+    background:var(--panel-bg);
+    border-radius:8px;
+    padding:1rem;
+    position:relative;
+    transition:transform .2s ease,box-shadow .2s ease;
+}
+.panel:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+.panel::before{
+    content:attr(data-title);
+    position:absolute;
+    top:-0.9rem;
+    left:1rem;
+    background:var(--bg-dark);
+    padding:0 0.5rem;
+    font-size:0.85rem;
+    color:var(--accent-purple);
+    letter-spacing:1px;
+}
+
+/* Links ---------------------------------------------------- */
+.link{
+    display:block;
+    margin:0.6rem 0;
+    padding:0.45rem 0.6rem;
+    border-left:3px solid var(--accent-neon);
+    color:var(--text-primary);
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:background .2s ease,color .2s ease;
+}
+.link:hover{
+    background:rgba(102,252,241,0.08);
+    color:var(--accent-neon);
+}
+
+/* Footer --------------------------------------------------- */
+footer{
+    text-align:center;
+    padding:0.6rem;
+    font-size:0.75rem;
+    color:#555;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>TRADEPRO – FUTURISTIC DASHBOARD</h1>
+</header>
+
+<main>
+    <div class="grid">
+
+        <!-- Ship & Flight -->
+        <section class="panel" data-title="SHIP &amp; FLIGHT">
+            <a class="link" href="https://www.shiptraffic.net/tankers" target="_blank">🚢 Tanker Ships Location</a>
+            <a class="link" href="https://www.flightradar24.com" target="_blank">✈️ Flight Tracker</a>
+        </section>
+
+        <!-- Threat & Conflict -->
+        <section class="panel" data-title="THREAT &amp; CONFLICT">
+            <a class="link" href="https://www.conflictly.app/" target="_blank">⚔️ Conflict Radar</a>
+            <a class="link" href="https://www.pizzint.watch/gdelt" target="_blank">📡 Threat Monitor (GDELT)</a>
+            <a class="link" href="https://www.pizzint.watch" target="_blank">🍕 Pentagon Pizza Index</a>
+        </section>
+
+        <!-- Trading -->
+        <section class="panel" data-title="TRADING">
+            <a class="link" href="https://www.tradingview.com" target="_blank">📊 TradingView</a>
+            <a class="link" href="https://chartexchange.com/trends/reddit/mentions/cx-all/" target="_blank">💬 Reddit Mentions</a>
+            <a class="link" href="https://www.coinglass.com/whale-alert" target="_blank">🐋 Whale Alert</a>
+            <a class="link" href="https://stockcircle.com" target="_blank">👤 Insider Trades</a>
+            <a class="link" href="https://edition.cnn.com/markets/fear-and-greed" target="_blank">😨 Fear &amp; Greed Index</a>
+            <a class="link" href="https://trade.phantom.com/" target="_blank">🪄 Phantom Trade</a>
+            <a class="link" href="https://jup.ag/" target="_blank">🚀 Jupiter</a>
+            <a class="link" href="https://stockevents.app/en/for-you" target="_blank">📅 Stock Events</a>
+            <a class="link" href="https://app.drift.trade/" target="_blank">🌪️ Drift Trade</a>
+        </section>
+
+        <!-- News -->
+        <section class="panel" data-title="NEWS">
+            <a class="link" href="https://www.cnbc.com" target="_blank">📰 CNBC</a>
+            <a class="link" href="https://finance.yahoo.com/" target="_blank">💹 Yahoo Finance</a>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 TradePro • All links open in a new tab
+</footer>
+
+</body>
+</html>
